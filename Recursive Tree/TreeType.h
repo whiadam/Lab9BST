@@ -7,11 +7,10 @@ enum OrderType {PRE_ORDER, IN_ORDER, POST_ORDER};
 class TreeType
 {
 public:
-  TreeType();                     // constructor
- ~TreeType();                    // destructor
+  TreeType();
+ ~TreeType();
   TreeType(const TreeType& originalTree); 
   void operator=(const TreeType& originalTree);
-  // copy constructor
   void MakeEmpty();
   bool IsEmpty() const;
   bool IsFull() const;
@@ -22,10 +21,10 @@ public:
   void ResetTree(OrderType order); 
   ItemType GetNextItem(OrderType order, bool& finished);
   void Print(std::ofstream& outFile) const;
+  int LeafCount() const;
 private:
   TreeNode* root;
   QueType preQue;
   QueType inQue;
   QueType postQue;
 };
-
