@@ -7,55 +7,31 @@ int main()
 {
     TreeType tree;
 
-    cout << "Test 1: Empty tree" << endl;
-    cout << "LeafCount = " << tree.LeafCount() << endl;
-    cout << endl;
+    // empty tree test
+    cout << "empty tree leaf count: " << tree.LeafCount() << endl;
 
-    cout << "Test 2: Single node (root only)" << endl;
+    // add one node
     tree.PutItem('M');
-    cout << "LeafCount = " << tree.LeafCount() << endl;
-    cout << endl;
+    cout << "just root, leaf count: " << tree.LeafCount() << endl;
 
-    cout << "Test 3: Tree with multiple nodes" << endl;
+    // normal tree
     tree.PutItem('F');
     tree.PutItem('T');
     tree.PutItem('A');
     tree.PutItem('J');
+    cout << "after adding M F T A J, leaf count: " << tree.LeafCount() << endl;
+
+    // bigger tree
     tree.PutItem('R');
     tree.PutItem('W');
-    cout << "Inserted: M F T A J R W" << endl;
-    cout << "LeafCount = " << tree.LeafCount() << endl;
-    cout << endl;
+    cout << "after adding R W, leaf count: " << tree.LeafCount() << endl;
 
-    cout << "Test 4: Linear chain (all right children)" << endl;
-    TreeType chain;
-    chain.PutItem('A');
-    chain.PutItem('B');
-    chain.PutItem('C');
-    chain.PutItem('D');
-    cout << "Inserted: A B C D (right-skewed)" << endl;
-    cout << "LeafCount = " << chain.LeafCount() << endl;
-    cout << endl;
-
-    cout << "Test 5: Full binary tree (7 nodes, 4 leaves)" << endl;
-    TreeType full;
-    full.PutItem('D');
-    full.PutItem('B');
-    full.PutItem('F');
-    full.PutItem('A');
-    full.PutItem('C');
-    full.PutItem('E');
-    full.PutItem('G');
-    cout << "Inserted: D B F A C E G" << endl;
-    cout << "LeafCount = " << full.LeafCount() << endl;
-    cout << endl;
-
-    cout << "Test 6: Two nodes only" << endl;
-    TreeType two;
-    two.PutItem('B');
-    two.PutItem('A');
-    cout << "Inserted: B A" << endl;
-    cout << "LeafCount = " << two.LeafCount() << endl;
+    // new tree to test all on one side
+    TreeType tree2;
+    tree2.PutItem('A');
+    tree2.PutItem('B');
+    tree2.PutItem('C');
+    cout << "one sided tree leaf count: " << tree2.LeafCount() << endl;
 
     return 0;
 }
