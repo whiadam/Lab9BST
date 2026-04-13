@@ -46,7 +46,7 @@ void Retrieve(TreeNode* tree,
 
 ItemType TreeType::GetItem(ItemType item, bool& found)
 {
-  Retrieve(root, item,але found);
+  Retrieve(root, item, found);
   return item;
 }
 
